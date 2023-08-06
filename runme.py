@@ -88,10 +88,14 @@ def start(profile):
     ch = 0
     time.sleep(10)
     for i in elems:
+        ts = 0
         dd = True
         ch = ch + 1
         while dd == True:
             try:
+                ts = ts + 1
+                if ts > 5:
+                    dd = False
             # if True:
                 driver.switch_to.window(window_now)
                 if driver.current_url.upper() != 'https://galxe.com/aptoslabs/campaign/GCa1NU4Gha'.upper():
